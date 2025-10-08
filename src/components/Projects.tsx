@@ -11,6 +11,15 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "PlanEats AI",
+      subtitle: "Smart Meal Planning Application",
+      description:
+        "AI-powered meal planning using RAG (Retrieval-Augmented Generation) to match recipes from available ingredients and dietary preferences. Generates personalized meal plans with nutritional information.",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
+      github: "https://github.com/kalviumcommunity/PlanEats",
+      live: "https://planeatss.netlify.app/",
+    },
+    {
       title: "WanderWise",
       subtitle: "Smart Travel Planner",
       description:
@@ -43,7 +52,7 @@ const Projects = () => {
           <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
