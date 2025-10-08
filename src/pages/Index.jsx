@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen max-w-2xl mx-auto px-6 py-8">
+    <div className="min-h-screen max-w-4xl mx-auto px-8 py-12">
       <Hero />
       <About />
       <Skills />
