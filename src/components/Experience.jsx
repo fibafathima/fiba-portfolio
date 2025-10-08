@@ -8,12 +8,6 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "Software Development Intern",
-      company: "Kalvium Work Integration",
-      period: "Aug 2024 – Jan 2025",
-      description: "Built production-grade UIs with React and Tailwind CSS. Improved form usability by 25% through enhanced UX design.",
-    },
-    {
       title: "Python and Data Science Intern",
       company: "Futura Labs",
       period: "Nov 2023 – Mar 2024",

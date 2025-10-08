@@ -1,44 +1,33 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 const Skills = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const skills = [
-    "Python", "JavaScript", "C++", "React", "Node.js", "Express.js", 
-    "MongoDB", "Tailwind CSS", "Git & GitHub", "REST APIs", "Postman"
+    "JavaScript", "Python", "Java", "React", "Node.js", 
+    "MongoDB", "Express.js", "Tailwind CSS", "Git"
   ];
 
   return (
-    <section id="skills" className="py-16">
-      <div ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Skills</h2>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto"
-        >
+    <section className="mb-12">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <h2 className="text-xl font-semibold mb-4">Skills</h2>
+        <div className="flex flex-wrap gap-2">
           {skills.map((skill, idx) => (
-            <span
+            <motion.span
               key={idx}
-              className="px-3 py-1 bg-muted text-foreground rounded-full text-sm font-medium border border-border"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 + idx * 0.05 }}
+              className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20"
             >
               {skill}
-            </span>
+            </motion.span>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 };
