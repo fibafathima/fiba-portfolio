@@ -14,15 +14,15 @@ const Projects = () => {
       title: "WanderWise",
       description: "Smart travel itinerary generator",
       tech: ["React", "Express.js", "MongoDB"],
-      github: "https://github.com/fibafathima",
-      live: "https://github.com/fibafathima",
+      github: "https://github.com/kalviumcommunity/S66_FibaFathima_Capstone_WanderWise",
+      live: "https://wanderwiseca.netlify.app/",
     },
     {
       title: "Late-O-Matic",
       description: "Fun excuse generator with JWT auth",
       tech: ["React", "MongoDB", "JWT"],
-      github: "https://github.com/fibafathima",
-      live: "https://github.com/fibafathima",
+      github: "https://github.com/kalviumcommunity/S66_Late_O_Matic",
+      live: "https://b9e5862a.lateomatic.pages.dev/",
     },
   ];
 

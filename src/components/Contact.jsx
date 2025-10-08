@@ -52,9 +52,6 @@ const Contact = () => {
           ))}
         </div>
 
-        <div className="text-xs text-muted-foreground">
-          <p>© 2024 Fiba Fathima Pazhedath</p>
-        </div>
       </motion.div>
     </section>
   );
