@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Code2, Mail } from "lucide-react";
 
 const Contact = () => {
@@ -13,91 +12,64 @@ const Contact = () => {
       name: "LinkedIn",
       icon: Linkedin,
       url: "https://www.linkedin.com/in/fiba-fathima-4a15692aa",
-      color: "hover:text-[#0077b5]",
     },
     {
       name: "GitHub",
       icon: Github,
       url: "https://github.com/fibafathima",
-      color: "hover:text-[#333]",
     },
     {
       name: "LeetCode",
       icon: Code2,
       url: "https://leetcode.com/u/fibafathima",
-      color: "hover:text-[#FFA116]",
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      url: "mailto:fiba@example.com",
     },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-4" ref={ref}>
+    <section id="contact" className="py-16">
+      <div ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Let's Connect</h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Let's Connect</h2>
+          <p className="text-muted-foreground max-w-lg mx-auto mb-8">
+            I'm always open to discussing new projects, creative ideas, or opportunities.
+          </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-2xl mx-auto text-center"
+          className="flex justify-center gap-6 mb-8"
         >
-          <p className="text-lg text-muted-foreground mb-8">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {socials.map((social, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
-              >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className={`border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all ${social.color}`}
-                  asChild
-                >
-                  <a href={social.url} target="_blank" rel="noopener noreferrer">
-                    <social.icon size={20} className="mr-2" />
-                    {social.name}
-                  </a>
-                </Button>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <Button
-              size="lg"
-              className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg"
-              asChild
+          {socials.map((social, idx) => (
+            <a
+              key={idx}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
             >
-              <a href="mailto:fiba@example.com">
-                <Mail size={20} className="mr-2" />
-                Send Email
-              </a>
-            </Button>
-          </motion.div>
+              <social.icon size={24} className="group-hover:scale-110 transition-transform" />
+              <span className="text-xs">{social.name}</span>
+            </a>
+          ))}
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center text-muted-foreground"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center text-xs text-muted-foreground"
         >
           <p>© 2024 Fiba Fathima Pazhedath. Built with React & Tailwind CSS.</p>
         </motion.div>

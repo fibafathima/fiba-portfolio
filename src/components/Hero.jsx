@@ -1,101 +1,71 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-gradient-hero pt-20"
+      className="py-20 text-center"
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Hi, I'm{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Fiba Fathima Pazhedath
-              </span>
-            </h1>
-          </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mb-8"
+      >
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          Fiba Fathima Pazhedath
+        </h1>
+        <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
+          Full-Stack Engineer
+        </h2>
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          Building scalable, user-first products with React, Node.js, and MongoDB
+        </p>
+      </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8">
-              Aspiring Full-Stack Engineer
-            </h2>
-          </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex flex-wrap justify-center gap-4 mb-8"
+      >
+        <Button
+          size="lg"
+          className="bg-primary hover:bg-primary/90"
+        >
+          View Resume
+          <ArrowRight className="ml-2" size={16} />
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          onClick={() => {
+            const element = document.getElementById("contact");
+            element?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Get in Touch
+        </Button>
+      </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto"
-          >
-            Building scalable, user-first products with React, Node.js, and MongoDB
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Button
-              size="lg"
-              className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg"
-            >
-              View Resume
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg"
-              onClick={() => {
-                const element = document.getElementById("contact");
-                element?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Get in Touch
-            </Button>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-16"
-          >
-            <button
-              onClick={() => {
-                const element = document.getElementById("about");
-                element?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="animate-bounce text-primary"
-            >
-              <svg
-                className="w-6 h-6 mx-auto"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-              </svg>
-            </button>
-          </motion.div>
-        </div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="flex justify-center gap-6"
+      >
+        <a href="https://github.com/fibafathima" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Github size={24} />
+        </a>
+        <a href="https://www.linkedin.com/in/fiba-fathima-4a15692aa" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Linkedin size={24} />
+        </a>
+        <a href="mailto:fiba@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+          <Mail size={24} />
+        </a>
+      </motion.div>
     </section>
   );
 };

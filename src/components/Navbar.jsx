@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,10 +32,10 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-sm shadow-soft" : "bg-transparent"
+        isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="max-w-4xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
@@ -44,17 +43,11 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                className="text-foreground/80 hover:text-primary transition-colors font-medium text-sm"
               >
                 {item.label}
               </button>
             ))}
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-gradient-primary hover:opacity-90 transition-opacity"
-            >
-              Get in Touch
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,12 +71,6 @@ const Navbar = () => {
                 {item.label}
               </button>
             ))}
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
-            >
-              Get in Touch
-            </Button>
           </div>
         )}
       </div>

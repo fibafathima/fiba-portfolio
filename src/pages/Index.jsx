@@ -10,7 +10,7 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen max-w-4xl mx-auto px-4 py-8">
       <Navbar />
       <Hero />
       <About />
